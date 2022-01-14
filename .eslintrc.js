@@ -8,19 +8,11 @@ module.exports = {
   },
   extends: [
     'standard',
-    'prettier',
-    'prettier/standard',
     'plugin:jest/recommended'
   ],
-  plugins: ['prettier', 'jest'],
+  plugins: ['jest'],
   rules: {
     'promise/catch-or-return': 'error',
-    'prettier/prettier': [
-      'error',
-      {
-        'singleQuote': true,
-        'semi': false
-      }
-    ]
+    "no-multi-spaces": 0,
   }
 }

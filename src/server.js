@@ -5,11 +5,23 @@ import cors from 'cors'
 
 export const app = express()
 
-app.disable('x-powered-by')
+app.disable('x-powered-by')             // !!!
+app.use(cors())                         // Cross origin resource sharing
+app.use(json())                         // Get request body easily
+app.use(urlencoded({ extended: true })) // Add params to URL com "?"
+app.use(morgan('dev'))                  // Logging
 
-app.use(cors())
-app.use(json())
-app.use(urlencoded({ extended: true }))
-app.use(morgan('dev'))
+app.get('/', (req, res) => {
+  res.send('hemlo :')
+})
 
-export const start = () => {}
+app.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('Ok')
+})
+
+export const start = () => {
+  app.listen(3000, () => {
+    console.log('server on :3000')
+  })
+}

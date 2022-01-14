@@ -17,14 +17,14 @@ let envConfig = {}
 switch (env) {
   case 'dev':
   case 'development':
-    envConfig = require('./dev').config
+    envConfig = require('./dbUrl').devConfig
     break
   case 'test':
   case 'testing':
-    envConfig = require('./testing').config
+    envConfig = require('./dbUrl').testConfig
     break
   default:
-    envConfig = require('./dev').config
+    envConfig = require('./dbUrl').devConfig
 }
 
 export default merge(baseConfig, envConfig)

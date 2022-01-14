@@ -61,3 +61,7 @@ typings/
 .next
 
 dist
+
+# Database URLs and secrets
+src/config/*
+!src/config/index.js
